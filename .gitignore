@@ -1,0 +1,5 @@
+__pycache__/
+.verify-install-run/
+*.py[cod]
+.DS_Store
+Thumbs.db

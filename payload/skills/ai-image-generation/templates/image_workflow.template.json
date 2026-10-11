@@ -1,0 +1,27 @@
+{
+  "image_generation": {
+    "mode": "script-provider",
+    "provider": "beeapi-gpt-image-2",
+    "fallback_provider": "grok-imagine-image-quality",
+    "second_fallback_provider": null,
+    "api_key": null,
+    "base_url": null,
+    "model": "gpt-image-2.5",
+    "size": null,
+    "quality": null,
+    "response_format": "b64_json",
+    "background": null
+  },
+  "runtime": {
+    "delay": 5,
+    "timeout": 180,
+    "retries": 2,
+    "min_width": 0,
+    "min_height": 0,
+    "strict_min_size": false,
+    "max_concurrency": 5,
+    "skip_existing": true,
+    "preview_max_dim": 1000,
+    "preview_quality": 82
+  }
+}

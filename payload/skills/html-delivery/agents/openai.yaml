@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Delivery"
+  short_description: "Archive complex deliverables as self-contained HTML."
+  default_prompt: "Use $html-delivery to turn this complex deliverable into an archived single-file HTML artifact."

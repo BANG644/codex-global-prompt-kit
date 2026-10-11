@@ -1,0 +1,4 @@
+interface:
+  display_name: "Goal Keepalive"
+  short_description: "Keep long-running Goals alive with a thread heartbeat"
+  default_prompt: "Use $goal-keepalive to configure or repair a Goal heartbeat."

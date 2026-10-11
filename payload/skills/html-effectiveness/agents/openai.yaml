@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Effectiveness"
+  short_description: "Examples for complex HTML AI deliverables."
+  default_prompt: "Use $html-effectiveness to model this complex deliverable as a standalone HTML artifact."

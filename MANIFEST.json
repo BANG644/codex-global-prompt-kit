@@ -1,0 +1,40 @@
+{
+  "kit_version": "1.0.0",
+  "payload_checksum_file": "payload.sha256",
+  "codex_global_files": [
+    "AGENTS.md",
+    "RTK.md"
+  ],
+  "skills": [
+    "ai-image-generation",
+    "goal-keepalive",
+    "codex-agent-orchestration",
+    "codex-reasoning-quality-gates",
+    "karpathy-guidelines",
+    "review-ready-report",
+    "html-delivery",
+    "html-effectiveness"
+  ],
+  "plugin": {
+    "id": "ponytail@ponytail",
+    "name": "Ponytail",
+    "version": "5.1.0",
+    "repository": "https://github.com/DietrichGebert/ponytail.git",
+    "ref": "9b58c1ffb790c075ca32e70a89cf1d80588f4abf",
+    "marketplace_sparse_path": ".agents/plugins"
+  },
+  "paths": {
+    "codex_home": "${CODEX_HOME:-~/.codex}",
+    "user_skills": "~/.agents/skills"
+  },
+  "required_for_install": [
+    "Python 3.10 or newer",
+    "Codex CLI with plugin marketplace commands",
+    "Git"
+  ],
+  "optional_capabilities": [
+    "RTK CLI: used only for reducing noisy command output; native commands remain available",
+    "CodeGraph CLI or MCP: optional navigation aid; the global prompt already provides a CLI fallback",
+    "Image generation API credentials: needed only when invoking ai-image-generation; configure them locally, never in this repository"
+  ]
+}
