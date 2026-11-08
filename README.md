@@ -1,17 +1,17 @@
 # Codex Global Prompt Kit
 
-This repository packages the active global Codex instructions from one machine for a deliberate, user-level copy to another machine. The release contains the exact `AGENTS.md` and its `RTK.md` companion, eight skills directly referenced by or paired with those instructions, and a pinned installation recipe for the related Ponytail plugin.
+This repository packages the active global Codex instructions from one machine for a deliberate, user-level copy to another machine. It contains byte-for-byte copies of `AGENTS.md` and its `RTK.md` companion, eight related skills, and a pinned installation recipe for the Ponytail plugin. For privacy, the plain-language reporting guide uses generic illustrative examples instead of filenames or empirical results from its source materials.
 
 ## Contents
 
 - `payload/global/AGENTS.md` and `payload/global/RTK.md`: byte-for-byte copies of the source global instruction files.
-- `payload/skills/`: exact copies of the eight selected skill folders, including their required helper files and HTML examples.
+- `payload/skills/`: the eight selected skill folders, including their required helper files and HTML examples. The `review-ready-report` plain-language guide retains the reusable writing methods but uses clearly labeled generic examples.
 - `MANIFEST.json` and `payload.sha256`: scope, upstream plugin pin, and SHA-256 integrity list for every installed payload file.
 - `install.py`: cross-platform installer with preflight checks and local backups.
 - `PROMPT.md`: the single prompt intended for sharing with another Codex user.
 - `NOTICE.md`: source and license notes for bundled or remotely installed materials.
 
-The kit does not contain the machine's full `config.toml`, MCP connection definitions, account state, API keys, personal skills outside this allowlist, or local application data.
+The kit does not contain the machine's full `config.toml`, MCP connection definitions, account state, API keys, personal skills outside this allowlist, or local application data. It pins the user-installed Ponytail plugin; Codex bundled and runtime plugins come from the recipient's own Codex installation and are not copied from this machine.
 
 Git line-ending conversion is disabled for this repository so each checked payload keeps the exact bytes covered by its checksum on Windows, macOS, and Linux.
 

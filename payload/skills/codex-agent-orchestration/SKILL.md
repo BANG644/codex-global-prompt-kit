@@ -1,11 +1,11 @@
 ---
 name: codex-agent-orchestration
-description: Use when a Codex task may benefit from parallel subagents, delegated work packages, explicit write ownership, or coordinating agent waits. Covers when not to delegate, task boundaries, context sharing, routing, and integration.
+description: Use when a Codex task may benefit from parallel subagents, delegated work packages, explicit write ownership, or coordinating agent waits. Also applies to Token Efficiency under a Sol lead, including batching repetitive work for Luna without an explicit user reminder.
 ---
 
 # Codex Agent Orchestration
 
-Use delegation only when it shortens the critical path. The primary agent remains the owner of scope, permissions, the critical path, necessary direct work, integration, and final acceptance.
+Delegate when it shortens the critical path or, under a Sol lead, reduces total costly-token use without lowering quality or missing the user's delivery constraints. The primary agent remains the owner of scope, permissions, the critical path, necessary direct work, integration, and final acceptance.
 
 ## Decide whether to delegate
 
@@ -16,11 +16,12 @@ Use delegation only when it shortens the critical path. The primary agent remain
 
 ## Cost-aware model routing
 
-- Model collaboration is separate from Advisor review. Keep the lead model responsible for scope, judgment, integration, and final acceptance. When the runtime confirms a suitable lower-cost executor such as `gpt-6-luna`, a high-cost lead such as `gpt-6.1-sol` may delegate independent, repetitive, low-complexity work to it without lowering the final acceptance standard.
-- This routing is available to any executor with the required capability. With same-level or similarly priced models, the main benefit is throughput or latency; with a higher-cost lead and lower-cost executor, it may also reduce execution cost.
-- Good candidates include mechanical inventory, bounded extraction or conversion, independent static checks, repetitive comparisons, and parallel research collection with a fixed source and output contract. Keep requirements interpretation, architecture, security or permissions, data-loss decisions, ambiguous judgment, conflict resolution, integration, and final synthesis with the lead unless the task explicitly defines a separate review package.
-- Before dispatch, estimate the work size, context-transfer cost, dispatch and wait overhead, review or integration cost, and expected savings or critical-path improvement. Keep tiny tasks local; delegate only when independence, batching, or parallelism makes the total tradeoff worthwhile.
-- Give every delegated package an owner, write boundary, acceptance criteria, stop condition, and fallback. Treat worker output as evidence or a draft until the lead verifies it at a risk-appropriate depth. If the runtime does not confirm the selected model or route, do not invent or silently substitute one; use the active executor.
+- **Scope and default:** apply this cost-saving policy only when the runtime identifies the active primary as Sol (currently `gpt-6.1-sol`), whether or not the user says "Token Efficiency". Other leads retain ordinary delegation and Advisor rules; same-level parallelism does not imply a cost saving.
+- **Local cost preference:** for this user's current setup, treat Sol tokens as scarce, including the lead's own work, Sol workers, and Sol Advisors; treat Luna as effectively unmetered for routing purposes. This is a user-provided cost preference, not a universal pricing or unlimited-capacity claim. Respect actual context, concurrency, service limits, and user budgets; do not impose new hard token caps without a user request.
+- **Prefer Luna for suitable execution:** when the runtime confirms `gpt-6-luna`, actively look for coherent batches of mechanical or repetitive work, execution of an already detailed plan, bounded research collection or shallow analysis, and factual inventory or status reporting. Research with ambiguous evidence or difficult inference is not automatically low-complexity. Use independent workers in parallel where their outputs and write scopes are separable; do not create one worker per tiny item.
+- **Check the total trade-off:** weigh useful work against briefing/context transfer, dispatch, waits, checking, rework, and integration. Keep small or tightly coupled tasks local. Dispatch only when the expected saving or speed gain is worthwhile, and request concise findings with source or artifact references rather than full logs. Review at the depth required by risk without routinely repeating the entire worker task.
+- **Keep difficult judgment with Sol:** retain scope, requirements interpretation, architecture, security or permission decisions, data-loss decisions, ambiguous or deep analysis, cross-package conflicts, integration, and final acceptance. Use another Sol worker or Advisor only when its difficult reasoning or independent perspective justifies the extra cost. If a Luna package becomes uncertain or too difficult, have it return findings and stop for lead reassessment; do not force repeated low-quality retries or silently promote the whole batch to Sol.
+- **Confirm routing and ownership:** give each package an owner, write boundary, acceptance criteria, stop condition, and fallback. Explicitly select the confirmed Luna model in the dispatch API; an unspecified worker may inherit the Sol parent. Respect the API's history-sharing constraints and provide only the context needed. If the route is unavailable, do not claim Luna was used or silently spawn Sol; reassess doing the necessary work locally. The lead still verifies and owns the final result.
 
 ## Define a work package
 

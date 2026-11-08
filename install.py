@@ -19,8 +19,8 @@ PAYLOAD_ROOT = KIT_ROOT / "payload"
 MANIFEST_PATH = KIT_ROOT / "MANIFEST.json"
 CHECKSUM_PATH = KIT_ROOT / "payload.sha256"
 PONYTAIL_URL = "https://github.com/DietrichGebert/ponytail.git"
-PONYTAIL_REF = "9b58c1ffb790c075ca32e70a89cf1d80588f4abf"
-PONYTAIL_VERSION = "5.1.0"
+PONYTAIL_REF = "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846"
+PONYTAIL_VERSION = "5.3.3"
 PONYTAIL_ID = "ponytail@ponytail"
 
 
@@ -358,7 +358,7 @@ def install_plugin_if_needed(needed, backup_root):
     still_needed = inspect_ponytail()
     if still_needed:
         raise KitError("The Codex CLI command returned, but the pinned Ponytail plugin is not enabled afterward.")
-    return "Ponytail is installed and enabled at version 5.1.0 from the pinned upstream commit."
+    return "Ponytail is installed and enabled at version 5.3.3 from the pinned upstream commit."
 
 
 def preflight(manifest):

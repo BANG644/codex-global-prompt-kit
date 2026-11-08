@@ -19,10 +19,10 @@ Do not use HTML for short answers, small code diffs, command output, plain lists
 
 ## Location
 
-- If working in a project, save HTML to `<project-root>/outputs/html_archive/`.
+- Follow a user-specified location first. In a project, save HTML reports to `<project-root>/docs/reports/`; save non-report HTML artifacts to `<project-root>/outputs/html_archive/`.
 - If no project root is available, save HTML to `%USERPROFILE%\.codex\html_archive\`.
 - Create the directory on demand.
-- Name files `yyyyMMdd-HHmmss-slug.html`; use a 2-6 word lowercase ASCII slug, or `deliverable` if no short title is obvious.
+- Name reports with a concise, descriptive Chinese title; add a date, version, or subject only when needed to distinguish similar reports. For other HTML artifacts, use a readable name suited to the project.
 
 ## Artifact
 

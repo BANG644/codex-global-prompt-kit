@@ -9,7 +9,7 @@ The active conversation model is the executor. A prompt or config preference doe
 
 ## Model and reasoning selection
 
-- Use the active executor for the primary work. Do not automatically route execution to GPT-6 Astra or a GPT-5.6 model. Use another executor only when the user explicitly requests it and the runtime confirms it is available.
+- Use the active executor for the primary work. Do not automatically route execution to GPT-6 Astra or a GPT-5.6 model. Another executor requires an explicit user request and runtime confirmation, except that suitable Luna workers are permitted by default under the Sol-lead policy in `codex-agent-orchestration`; this does not replace the primary model.
 - For GPT-6 Luna, use the highest reasoning level confirmed by the current model catalog/runtime. `max` is the last documented verified level; use `ultra` only when the runtime explicitly exposes it. Never write an unsupported level into config or infer support from a model name.
 - When a subagent is genuinely needed, select its model and reasoning effort for the work package. Simple, bounded, independently verifiable execution may use a lower supported level; architecture, root-cause, complex integration, security, permissions, data loss, and autonomous judgment need the highest verified level. Do not lower a complex task just to save tokens.
 - Resolve routing precedence as: task-level explicit choice > role default > global `[agents]` default > parent/platform default.
@@ -18,6 +18,8 @@ The active conversation model is the executor. A prompt or config preference doe
 ## Advisor gate
 
 The default read-only Advisor is GPT-6.1 Sol at `ultra`, but call it only when the runtime exposes that exact model and level. If unavailable, record `Advisor unavailable`; do not substitute another model by guesswork.
+
+When the primary is Sol, a Sol Advisor provides a second perspective, not a higher-capability tier. Keep consultations focused on a concrete risk or disputed judgment and proportionate to their extra token cost; do not duplicate routine work. Worker delegation is a separate decision: route suitable low-complexity execution through `codex-agent-orchestration`. Other primary models retain the existing Advisor rules below.
 
 Consult an Advisor for high-risk or irreversible actions, security or permission decisions, external publication, architecture migration, conflicting evidence, two consecutive failures of the same class, or an explicit user request. For cross-system choices with a real design disagreement, consultation is optional. Skip it for ordinary reading, mechanical edits, routine checks, and completion summaries. Use at most one consultation per task; a second requires a material new risk, evidence conflict, or changed approach.
 

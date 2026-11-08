@@ -1,5 +1,5 @@
 {
-  "kit_version": "1.0.0",
+  "kit_version": "1.1.0",
   "payload_checksum_file": "payload.sha256",
   "codex_global_files": [
     "AGENTS.md",
@@ -18,9 +18,9 @@
   "plugin": {
     "id": "ponytail@ponytail",
     "name": "Ponytail",
-    "version": "5.1.0",
+    "version": "5.3.3",
     "repository": "https://github.com/DietrichGebert/ponytail.git",
-    "ref": "9b58c1ffb790c075ca32e70a89cf1d80588f4abf",
+    "ref": "96608e078b2d5ea607c5c3b8b5a54d1c1fba6846",
     "marketplace_sparse_path": ".agents/plugins"
   },
   "paths": {

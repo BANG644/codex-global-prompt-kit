@@ -1,7 +1,7 @@
 interface:
   display_name: "Plain-language Review"
   short_description: "Write complete reports that users can understand"
-  default_prompt: "Use $review-ready-report for reports, research or feasibility reviews, retrospectives, audits, evaluations, delivery notes, or user-facing technical summaries; produce one clear reader-oriented document unless two versions are requested."
+  default_prompt: "Use $review-ready-report to write a clear report; when accessible or plain-language wording is requested, first save or reuse a complete professional source report, then rewrite it for the reader while preserving substantive information."
 
 policy:
   allow_implicit_invocation: true
